@@ -8,16 +8,17 @@
 </head>
 <body>
     
+    <div id="sentence"></div>
+    
   <script>
     "use strict";
-var url = "data.json";         
-    $.getJSON(url, function (data) {
-        $.each(data, function (key, model) {
-            if (model.key == "INFO") {
-                console.log(model)
-            }
-        })
-    });
+      fetch("data.json")
+           .then(response => response.json())
+           .then(data => {
+                console.log(data)
+                document.querySelector('#sentence').innerText = data
+           })
+
   </script>
 </body>
 </html>
