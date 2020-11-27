@@ -10,22 +10,13 @@
     
   <script>
     "use strict";
-"use strict";
-
-fetch('./data.json')
-    .then(function(resp) {
-        return resp.json();
-    })
-    .then(function(data) {
-        console.log(data);
-        const imgPATH = "https://m.media-amazon.com/";
-
-        const movieEl = document.createElement("div");
-        movieEl.classList.add("movie");
-
-        movieEl.innerHTML = `
-            <p>${data.overveiw}</p>
-        `;
+var url = "data.json";         
+    $.getJSON(url, function (data) {
+        $.each(data, function (key, model) {
+            if (model.key == "INFO") {
+                console.log(model)
+            }
+        })
     });
   </script>
 </body>
