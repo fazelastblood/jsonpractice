@@ -17,6 +17,18 @@ fetch('./data.json')
     })
     .then(function(data) {
         console.log(data);
+        const imgPATH = "https://m.media-amazon.com/";
+
+        const movieEl = document.createElement("div");
+        movieEl.classList.add("movie");
+
+        movieEl.innerHTML = `
+            <img
+                src="${imgPATH + data.poster_path}"
+                alt="no"
+            />
+            <p>${data.overveiw}</p>
+        `;
     });
   </script>
 </body>
