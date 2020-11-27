@@ -9,13 +9,15 @@
     
   <script>
     "use strict";
+"use strict";
 
-fetch('data.json')
-.then((resp)=>{
-    console.log('resolved',resp);
-  }).catch((err)=>{
-      console.log('rejected', err);
-  });
+fetch('./data.json')
+    .then(function(resp) {
+        return resp.json();
+    })
+    .then(function(data) {
+        console.log(data);
+    });
   </script>
 </body>
 </html>
